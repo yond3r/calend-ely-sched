@@ -1,83 +1,36 @@
-// all times, from 09 to 17, listed out
-// blocks 9 to 11 blocked out with grey
-// @ 13, the intended item is red
-// from 14 on to 17, the times are green
-// ability to store data, and change data within each line -- so a functional calendar, lol
-
 let currentDay = moment().format("MMM Do YY")
 $("#currentDay").text(currentDay);
 
 var currentHour = moment().format("HH")
 console.log(currentHour);
 
-/*var atNine = moment({hour: 9}).format("h")
-console.log(atNine)
-
-var atTen = moment({hour: 10}).format("h")
-console.log(atTen)
-
-var atEleven = moment({hour: 11}).format("h")
-console.log(atEleven)
-
-var atTwelve = moment({hour: 12}).format("h")
-console.log(atTwelve)
-
-var atThirteen = moment({hour: 13}).format("h")
-console.log(atThirteen)
-
-var atFourteen = moment({hour: 14}).format("h")
-console.log(atFourteen)
-
-var atFifteen = moment({hour: 15}).format("h")
-console.log(atFifteen)
-
-var atSixteen = moment({hour: 16}).format("h")
-console.log(atSixteen)
-
-var atSeventeen = moment({hour: 17}).format("h")
-console.log(atSeventeen) */
-
-// for loops/if else statements for time
-// function calendarHours(9) {
-//     if (9 < currentHour)
-//         return "past";
-    
-//     } else if (9 === currentHour) {
-//         return "present";
-
-//     } else {
-//         return "future"
-
-
 //color loop 1.0 that I can't quite seem to figure out ??
-// for (let i = 0; i < 9; i++) {
-//      var container = $('this').attr("i+9");
-//      if (i + 9 < currentHour) {
-//          $(this).addClass("past")
 
+// for (let i = 0; i < 9; i++) {
+//      if (i + 9 < currentHour) {
+//         particularHour.eq(i).addClass('past');
 //      } 
 //      else if (i + 9 > currentHour) {
-//         $(this).addClass("future")
-
+//         particularHour.eq(i).addClass('future');
 //      } 
 //      else {
-//         $(this).addClass("present")
+//       particularHour.eq(i).addClass('present')
 //          }
 //      }; 
 
 //color loop 2.0 that is worth a try -- makes everything green? now that I have that down, I'm going to move to the first one and play around w/ that
 
 $(".time-block").each(function() {
-    var particularHour = $('this').attr("id");
+    var particularHour = $('this').attr("");
 
     if (currentHour > particularHour) {
-        $(this).addClass("past")
+        $(this).addClass("past");
     }
     else if (currentHour === particularHour) {
-        $(this).addClass("present")
+        $(this).addClass("present");
     }
     else {
-        $(this).addClass("future")
+        $(this).addClass("future");
     }
 });
 
@@ -181,67 +134,77 @@ let item = $(textArea17).val();
 
 
 
-//localStorage
+//localStorage ???
+// saveBtnNine = function () {
+//     var value10 = $('btnNine').val();
+//       localStorage.setItem("event9", value9)
 
- saveBtnTen = function () {
-    var value10 = $('btnTen').val();
-      localStorage.setItem("event10", value10)
+//      console.log(localStorage.getItem("event9")) }
 
-     console.log(localStorage.getItem("event10")) }
+//  saveBtnTen = function () {
+//     var value10 = $('btnTen').val();
+//       localStorage.setItem("event10", value10)
+
+//      console.log(localStorage.getItem("event10")) }
 
 // saveBtnEleven  = function () {
-//     var value11 = $('atEleven').val();
+//     var value11 = $('btnEleven').val();
 //     localStorage.setItem("event11", value11)
 
 //     console.log(localStorage.getItem("event11")) }
 
 // saveBtnTwelve = function () {
-//     var value12 = $('atTwelve').val();
+//     var value12 = $('btnTwelve').val();
 //     localStorage.setItem("event12", value12)
 
 //     console.log(localStorage.getItem("event12")) }
 
 // saveBtnThirteen = function () {
-//     var value13 = $('atThirteen').val();
+//     var value13 = $('btnThirteen').val();
 //     localStorage.setItem("event13", value13)
 
 //     console.log(localStorage.getItem("event13")) }
 
 // saveBtnFourteen = function () {
-//     var value14 = $('atFourteen').val();
+//     var value14 = $('btnFourteen').val();
 //     localStorage.setItem("event14", value14)
 
 //     console.log(localStorage.getItem("event14")) }
 
 // saveBtnFifteen = function () {
-//     var value15 = $('atFifteen').val();
+//     var value15 = $('btnFifteen').val();
 //     localStorage.setItem("event15", value15)
 
 //     console.log(localStorage.getItem("event15")) }
 
 // saveBtnSixteen = function () {
-//     var value16 = $('atSixteen').val();
+//     var value16 = $('btnSixteen').val();
 //     localStorage.setItem("event16", value16)
 
 //     console.log(localStorage.getItem("event16")) }
 
 // saveBtnSeventeen = function () {
-//     var value17 = $('atSeventeen').val();
+//     var value17 = $('btnSeventeen').val();
 //     localStorage.setItem("event17", value17)
 
 //     console.log(localStorage.getItem("event17")) }
 
-// $(window).on('load', function(){
-//     console.log("reloaded")
 
-// $('atNine').attr("placeholder text",localStorage.getItem("event9"));
-// $('atTen').attr("placeholder text",localStorage.getItem("event10"));
-// $('atEleven').attr("placeholder text",localStorage.getItem("event11"));
-// $('atTwelve').attr("placeholder text",localStorage.getItem("event12"));
-// $('atThirteen').attr("placeholder text",localStorage.getItem("event13"));
-// $('atFourteen').attr("placeholder text",localStorage.getItem("event14"));
-// $('atFifteen').attr("placeholder text",localStorage.getItem("event15"));
-// $('atSixteen').attr("placeholder text",localStorage.getItem("event16"));
-// $('atSeventeen').attr("placeholder text",localStorage.getItem("event17"));
+//render 
 
-// });
+$(window).on('load', function(){
+    console.log("reloaded")
+
+$(btnNine).attr("text",localStorage.getItem("nine"));
+$(btnTen).attr("text",localStorage.getItem("ten"));
+$(btnEleven).attr("text",localStorage.getItem("eleven"));
+$(btnTwelve).attr("text",localStorage.getItem("twelve"));
+$(btnThirteen).attr("text",localStorage.getItem("thirteen"));
+$(btnFourteen).attr("text",localStorage.getItem("fourteen"));
+$(btnFifteen).attr("text",localStorage.getItem("fifteen"));
+$(btnSixteen).attr("text",localStorage.getItem("sixteen"));
+$(btnSeventeen).attr("text",localStorage.getItem("seventeen"));
+
+});
+
+// Assuming I saved that correctly, as the key is my inputed text, and value corresponds w/ said text, even after reloading?
